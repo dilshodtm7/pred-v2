@@ -20,9 +20,9 @@ class LoginController{
     }
 
     async updateUser(req,res){
-        const {email,status} = req.body
+        const {id,status} = req.body
 
-        const data = await LoginService.updateUser({email,status})
+        const data = await LoginService.updateUser(id,status)
         res.status(200).json(data)
     }
 
