@@ -64,12 +64,11 @@ class LoginService {
 
     }
 
-    async updateUser({ email, status }) {
-        const data = await this.#_loginModel.updateUser({ email, status });
-        const [user] = await this.#_loginModel.userRetrieve({
-            email
-            
-        });
+    async updateUser( id, status ) {
+        const data = await this.#_loginModel.updateUser( id, status );
+        const [user] = await this.#_loginModel.userRetrieve(
+            id  
+        );
 
         if (user) {
             return {
