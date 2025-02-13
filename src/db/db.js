@@ -7,7 +7,9 @@ export class PostgresModel {
 
     constructor() {
         this.#pg = new pg.Pool({
-            connectionString:'postgres://aevbuklb:R3WIbjMDum_lC4zc72WaBhYXpqaCJ3TQ@satao.db.elephantsql.com/aevbuklb'
+            connectionString:'postgresql://forpredictor_user:aOIgsXdrgJ08sHFbmn2A2rrBpAMgMeSV@dpg-cumtkmpu0jms73b86540-a.oregon-postgres.render.com/forpredictor'
+                // postgres://aevbuklb:R3WIbjMDum_lC4zc72WaBhYXpqaCJ3TQ@satao.db.elephantsql.com/aevbuklb
+            
             
         })
     }
