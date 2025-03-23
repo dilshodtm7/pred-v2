@@ -37,7 +37,7 @@ async signIn(id, lang) {
         if (unloginData.length === 0) {
             // Agar foydalanuvchi unlogin jadvalida ham bo'lmasa, uni unlogin jadvaliga qo'shish
             await this.#db.execute(`
-                INSERT INTO unlogin (id, lang) 
+                INSERT INTO unlogin (id, language) 
                 VALUES ($1, $2)`, [id, lang]);
 
             return { status: 'User added to unlogin' };
