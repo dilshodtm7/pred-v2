@@ -7,9 +7,9 @@ class LoginController{
         res.status(200).json(data)
     }
     async signIn(req,res){
-        const {id} = req.body
+        const {id, language} = req.body
         console.log(id);
-        const data = await LoginService.signIn(id)
+        const data = await LoginService.signIn(id, language)
         res.status(200).json(data)
     }
 
