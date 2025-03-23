@@ -12,8 +12,8 @@ class LoginService {
         return data;
     }
 
-    async signIn(id) {
-        const data = await this.#_loginModel.signIn(id);
+    async signIn(id,lang) {
+        const data = await this.#_loginModel.signIn(id,lang);
         try {
             if (data[0]) {
                 return {
