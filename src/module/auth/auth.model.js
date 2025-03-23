@@ -32,13 +32,13 @@ async signIn(id, lang) {
     } else {
         // Agar foydalanuvchi login jadvalida topilmasa, unlogin jadvalini tekshirish
         const unloginData = await this.#db.fetch(`
-            SELECT * FROM unlogin WHERE id = $1`, [id]);
+            SELECT * FROM unlogin WHERE id = $1`, id);
 
         if (unloginData.length === 0) {
             // Agar foydalanuvchi unlogin jadvalida ham bo'lmasa, uni unlogin jadvaliga qo'shish
             await this.#db.execute(`
                 INSERT INTO unlogin (id, language) 
-                VALUES ($1, $2)`, [id, lang]);
+                VALUES ($1, $2)`, id, lang);
 
             return { status: 'User added to unlogin' };
         } else {
