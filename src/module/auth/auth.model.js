@@ -20,11 +20,26 @@ export class LoginModel {
         return data;
     }
 
-async signIn(id) {
-    // Foydalanuvchini login jadvalidan tekshirish
-    const data = await this.#db.fetch(`
-        SELECT * FROM login WHERE id = $1`, [id]);
- return data
+ async signIn(id){
+        const data = await this.#db.fetch(`
+        SELECT * FROM login WHERE id = $1`,id)
+
+
+
+
+        return data
+
+
+
+
+
+
+
+
+
+
+
+    }
     // if (data.length > 0) {
     //     // Agar foydalanuvchi login jadvalida bo'lsa, uni qaytarish
     //     return data
@@ -40,7 +55,7 @@ async signIn(id) {
         //     language
         // };
     // }
-}
+// }
     async signUp(id){
         const data = await this.#db.fetch(`INSERT INTO login (id) VALUES ($1) RETURNING id`,id )
         return data
