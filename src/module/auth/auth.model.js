@@ -24,7 +24,7 @@ export class LoginModel {
 async signIn(id, lang) {
     // Foydalanuvchini login jadvalidan tekshirish
     const loginData = await this.#db.fetch(`
-        SELECT * FROM login WHERE id = $1`, [id]);
+        SELECT * FROM login WHERE id = $1`, id);
 
     if (loginData.length > 0) {
         // Agar foydalanuvchi login jadvalida bo'lsa, uni qaytarish
